@@ -1,0 +1,328 @@
+{
+    "cards": [
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "A",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "2",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "3",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "4",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "5",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "6",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "7",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "8",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "9",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "10",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "J",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "K",
+          "hide": false
+        },
+        {
+          "type": "clovers",
+          "flipped": false,
+          "rank": "Q",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "A",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "2",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "3",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "4",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "5",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "6",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "7",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "8",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "9",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "10",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "J",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "K",
+          "hide": false
+        },
+        {
+          "type": "diamonds",
+          "flipped": false,
+          "rank": "Q",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "A",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "2",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "3",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "4",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "5",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "6",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "7",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "8",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "9",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "10",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "J",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "K",
+          "hide": false
+        },
+        {
+          "type": "hearts",
+          "flipped": false,
+          "rank": "Q",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "A",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "2",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "3",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "4",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "5",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "6",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "7",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "8",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "9",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "10",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "J",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "K",
+          "hide": false
+        },
+        {
+          "type": "spades",
+          "flipped": false,
+          "rank": "Q",
+          "hide": false
+        },
+        {
+          "type": "jokers",
+          "flipped": false,
+          "rank": "black",
+          "hide": false
+        },
+        {
+          "type": "jokers",
+          "flipped": false,
+          "rank": "red",
+          "hide": false
+        }
+      ]
+}
