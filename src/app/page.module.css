@@ -1,6 +1,68 @@
-.container {
+.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  align-self: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: center;
+  margin: auto;
+}
+
+.btnStart {
+  margin-top: 32px;
+  background-color: #0ab169;
+  border-radius: 8px;
+  width: 30%;
+  align-self: center;
+  font-family: Poppins;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  border: #0ab169;
+}
+
+.header {
+  top: 16px;
+  position: absolute;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.08821529895067215px;
+  text-align: left;
+}
+
+.subHeader {
+  font-family: Poppins;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.18000000715255737px;
+  text-align: center;
+  margin-bottom: 64px;
 }

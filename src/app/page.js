@@ -1,8 +1,9 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
+import InputBox from "@/components/inputBox/inputBox";
 
 export default function Home() {
   const router = useRouter();
@@ -27,33 +28,52 @@ export default function Home() {
 
   return (
     <>
-      <div>Home Page</div>
-      <div className={styles.container}>
-        <div>
-          <label htmlFor="p_one">
-            Player 1
-            <input
-              id="p_one"
-              name="p_one"
-              value={players.p_one}
-              onChange={(e) => onPlayerChange(e)}
-            />
-          </label>
-        </div>
+      <div className={styles.page}>
+        <h1 className={styles.header}>Memory</h1>
+        <div className={styles.container}>
+        <p className={styles.subHeader}>Are you ready to play?</p>
+          <div className={styles.row}>
+            <div className={styles.inputContainer}>
+              <Image
+                alt={`balloon`}
+                src={`/space_balloon.svg`}
+                width={100}
+                height={100}
+                priority={true}
+                style={{ alignSelf: "center", marginBottom: "16px" }}
+              />
+              <InputBox
+                id="p_one"
+                name="p_one"
+                value={players.p_one}
+                placeHolder="Name of Player 1|"
+                handleChange={onPlayerChange}
+              />
+            </div>
 
-        <div>
-          <label htmlFor="p_two">
-            Player 2
-            <input
-              id="p_two"
-              name="p_two"
-              value={players.p_two}
-              onChange={(e) => onPlayerChange(e)}
-            />
-          </label>
+            <div className={styles.inputContainer}>
+              <Image
+                alt={`rocket`}
+                src={`/space_rocket.svg`}
+                width={100}
+                height={100}
+                priority={true}
+                style={{ alignSelf: "center", marginBottom: "16px" }}
+              />
+              <InputBox
+                id="p_two"
+                name="p_two"
+                value={players.p_two}
+                placeHolder="Name of Player 2|"
+                handleChange={onPlayerChange}
+              />
+            </div>
+          </div>
+          <button className={styles.btnStart} onClick={() => startGame()}>
+            Let's Play
+          </button>
         </div>
       </div>
-      <button onClick={() => startGame()}>Start</button>
     </>
   );
 }

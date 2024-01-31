@@ -1,0 +1,12 @@
+.input {
+    color: #1E293B;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+    background: #F1F5F9; 
+    border-radius: 8px; 
+    border: 1px #F1F5F9 solid;
+    padding: 8px;
+}
