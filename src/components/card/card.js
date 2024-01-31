@@ -9,7 +9,7 @@ const Card = ({ flipped, hide, rank, type, toggleCardState }) => {
       <Image
         alt={`${type}-${rank}`}
         src={flipped ? `/cards/${type}/${rank}.svg` : "/cards/Card_Back.svg"}
-        width={100}
+        width={72}
         height={100}
         onClick={() => toggleCardState()}
         priority={true}

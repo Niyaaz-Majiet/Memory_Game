@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -15,6 +15,11 @@ const PLAYER = {
 };
 
 const GamePortal = () => {
+  // const shuffledArray = data.cards
+  //   .map((a) => ({ sort: Math.random(), value: a }))
+  //   .sort((a, b) => a.sort - b.sort)
+  //   .map((a) => a.value);
+
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -25,8 +30,6 @@ const GamePortal = () => {
     [PLAYER.ONE]: 0,
     [PLAYER.TWO]: 0,
   });
-
-  const { playerOne, playerTwo } = router.state || {};
 
   useEffect(() => {
     checkIfUserCanPlay();
@@ -40,6 +43,8 @@ const GamePortal = () => {
     const totalScore = scores[PLAYER.ONE] + scores[PLAYER.TWO];
     if (totalScore == 27) {
       onGameComplete();
+    }else if(totalScore > 0){
+      alert("Match")
     }
   }, [scores]);
 
@@ -109,7 +114,6 @@ const GamePortal = () => {
     updateFlippedCount(numFlipped);
     if (numFlipped == 2) {
       let checkIfWinner = checkIfPlayerWonPair();
-      //updateFlippedCount(numFlipped);
 
       if (checkIfWinner) {
         updateScores({
@@ -121,8 +125,6 @@ const GamePortal = () => {
           x.flipped ? { ...x, flipped: false, hide: true } : x
         );
       }
-    } else {
-      //updateFlippedCount(numFlipped);
     }
 
     return updatedData;
@@ -139,26 +141,55 @@ const GamePortal = () => {
     <>
       <RootLayout>
         <div>Game Page</div>
-        <div>
-          {PLAYER.ONE} : SCORE - {scores[PLAYER.ONE]}
-        </div>
-        <div>
-          {PLAYER.TWO} : SCORE - {scores[PLAYER.TWO]}
-        </div>
-        <div>PLAYER : {player}</div>
-        <div className={styles.container}>
-          {gameState.map((card, index) => {
-            return (
-              <Card
-                key={index}
-                flipped={card.flipped}
-                hide={card.hide}
-                type={card.type}
-                rank={card.rank}
-                toggleCardState={() => updateGameStateData(index)}
+        <div className={styles.viewContainer}>
+          <div className={styles.playerInfoContainer}>
+            <div className={styles.playerInfo}>
+              <Image
+                alt={`balloon`}
+                src={`/space_balloon.svg`}
+                width={100}
+                height={100}
+                priority={true}
+                style={{ alignSelf: "center", marginBottom: "16px" }}
               />
-            );
-          })}
+              <p>{searchParams?.get("playerOne") || ""}</p>
+              <p>{`Score : ${scores[PLAYER.ONE]}`}</p>
+            </div>
+            {
+              player == PLAYER.ONE && <h1>Your Turn</h1>
+            }
+          </div>
+          <div className={styles.cardContainer}>
+            {gameState.map((card, index) => {
+              return (
+                <Card
+                  key={index}
+                  flipped={card.flipped}
+                  hide={card.hide}
+                  type={card.type}
+                  rank={card.rank}
+                  toggleCardState={() => updateGameStateData(index)}
+                />
+              );
+            })}
+          </div>
+          <div className={styles.playerInfoContainer}>
+            <div className={styles.playerInfo}>
+              <Image
+                alt={`rocket`}
+                src={`/space_rocket.svg`}
+                width={100}
+                height={100}
+                priority={true}
+                style={{ alignSelf: "center", marginBottom: "16px" }}
+              />
+              <p>{searchParams?.get("playerTwo") || ""}</p>
+              <p>{`Score : ${scores[PLAYER.TWO]}`}</p>
+            </div>
+            {
+              player == PLAYER.TWO && <h1>Your Turn</h1>
+            }
+          </div>
         </div>
       </RootLayout>
     </>
