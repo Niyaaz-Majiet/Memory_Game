@@ -1,0 +1,38 @@
+.winnerContainer {
+  border-radius: 8px;
+  align-items: center;
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 550px;
+  height: 100px;
+  background: linear-gradient(92.15deg, #ffd975 35.31%, #ffffff 135.61%);
+}
+
+.container {
+  align-items: center;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 550px;
+  height: 100px;
+  background: #fff;
+}
+
+.item {
+  width: 25%;
+}
+
+.text {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}

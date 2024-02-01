@@ -5,7 +5,7 @@
   justify-items: center;
   align-items: center;
   grid-row-gap: 4px;
-  grid-template-columns: repeat(9,1fr);
+  grid-template-columns: repeat(9, 1fr);
   grid-auto-rows: 100px;
   border-radius: 8px;
   background-color: rgba(205, 206, 255, 0.5);
@@ -20,6 +20,36 @@
   width: 100%;
   justify-content: space-between;
   margin-top: 8px;
+}
+
+.exitBtn {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 8px;
+  padding: 8px;
+  background-color: red;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+.resetBtn {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 8px;
+  padding: 8px;
+  background-color: #f4a236;
+  border: none;
+  border-radius: 8px;
+  color: white;
 }
 
 .playerInfoContainer {
@@ -57,25 +87,29 @@
   align-items: center;
 }
 
+.topBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
-@media (max-width: 350px){
+@media (max-width: 350px) {
   .cardContainer {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     max-height: 80vh;
   }
 }
 
-@media (min-width:351px) and (max-width:700px){
+@media (min-width: 351px) and (max-width: 700px) {
   .cardContainer {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     max-height: 80vh;
   }
 }
 
-
-@media (min-width:701px) and (max-width:1120px){
+@media (min-width: 701px) and (max-width: 1120px) {
   .cardContainer {
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr);
     max-height: 80vh;
   }
 }

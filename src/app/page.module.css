@@ -40,6 +40,7 @@
   line-height: 40px;
   letter-spacing: 0.08821529895067215px;
   text-align: left;
+  color: white;
 }
 
 .subHeader {
@@ -50,4 +51,5 @@
   letter-spacing: 0.18000000715255737px;
   text-align: center;
   margin-bottom: 64px;
+  color: white;
 }
