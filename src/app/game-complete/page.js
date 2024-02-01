@@ -1,6 +1,7 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Suspense } from "react";
 import Image from "next/image";
 import styles from "./game_complete.module.css";
 import ScoreBlock from "@/components/scoreBlock/scoreBlock";
