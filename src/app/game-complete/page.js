@@ -65,44 +65,48 @@ const GameComplete = () => {
 
   return (
     <>
-      <div className={styles.page}>
-        <p className={styles.heading}>Well Done!</p>
-        <p className={styles.subHeading}>{gameData.results.winner}</p>
-        <Image
-          src={"/space_complete.svg"}
-          width={250}
-          height={250}
-          priority={true}
-        />
-
-        {gameData.results.winner.includes("DRAW") ? (
-          <ScoreBlock
-            icon={"balloon"}
-            place={"1st Place"}
-            player={gameData.results.winner}
-            score={gameData.results.score}
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className={styles.page}>
+          <p className={styles.heading}>Well Done!</p>
+          <p className={styles.subHeading}>{gameData.results.winner}</p>
+          <Image
+            src={"/space_complete.svg"}
+            width={250}
+            height={250}
+            priority={true}
           />
-        ) : (
-          <div>
+
+          {gameData.results.winner.includes("DRAW") ? (
             <ScoreBlock
               icon={"balloon"}
               place={"1st Place"}
               player={gameData.results.winner}
               score={gameData.results.score}
-              winner={true}
             />
-            <ScoreBlock
-              icon={""}
-              place={"2nd Place"}
-              player={gameData.results.secondPlace}
-              score={gameData.results.secondPlaceScore}
-              winner={false}
-            />
-          </div>
-        )}
+          ) : (
+            <div>
+              <ScoreBlock
+                icon={"balloon"}
+                place={"1st Place"}
+                player={gameData.results.winner}
+                score={gameData.results.score}
+                winner={true}
+              />
+              <ScoreBlock
+                icon={""}
+                place={"2nd Place"}
+                player={gameData.results.secondPlace}
+                score={gameData.results.secondPlaceScore}
+                winner={false}
+              />
+            </div>
+          )}
 
-        <button className={styles.resetBtn} onClick={() => router.push("/")}>PLAY AGAIN</button>
-      </div>
+          <button className={styles.resetBtn} onClick={() => router.push("/")}>
+            PLAY AGAIN
+          </button>
+        </div>
+      </Suspense>
     </>
   );
 };

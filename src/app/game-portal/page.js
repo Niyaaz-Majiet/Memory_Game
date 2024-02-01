@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 import Card from "../../components/card/card";
 import PlayerStateBlock from "../../components/playerStateBlock/playerStateBlock";
@@ -159,75 +160,80 @@ const GamePortal = () => {
 
   return (
     <>
-      <div className={styles.page}>
-        <h1 className={styles.header}>Memory</h1>
-        <div className={styles.topBox}>
-          <button
-            className={styles.resetBtn}
-            onClick={() => {
-              restartGame();
-            }}
-          >
-            Restart Game
-          </button>
-          <button
-            className={styles.exitBtn}
-            onClick={() => {
-              router.push("/");
-            }}
-          >
-            Exit Game
-          </button>
-        </div>
-        <div className={styles.viewContainer}>
-          <div className={styles.playerInfoContainer}>
-            <PlayerStateBlock
-              altValue={`balloon`}
-              srcString={`/space_balloon.svg`}
-              player={searchParams?.get("playerOne") || ""}
-              score={scores[PLAYER.ONE]}
-            />
-            <div className={styles.playerInfoBtn}>
-              {player == PLAYER.ONE && (
-                <DisplayButton text={"It’s your turn"} handleClick={() => {}} />
-              )}
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className={styles.page}>
+          <h1 className={styles.header}>Memory</h1>
+          <div className={styles.topBox}>
+            <button
+              className={styles.resetBtn}
+              onClick={() => {
+                restartGame();
+              }}
+            >
+              Restart Game
+            </button>
+            <button
+              className={styles.exitBtn}
+              onClick={() => {
+                router.push("/");
+              }}
+            >
+              Exit Game
+            </button>
+          </div>
+          <div className={styles.viewContainer}>
+            <div className={styles.playerInfoContainer}>
+              <PlayerStateBlock
+                altValue={`balloon`}
+                srcString={`/space_balloon.svg`}
+                player={searchParams?.get("playerOne") || ""}
+                score={scores[PLAYER.ONE]}
+              />
+              <div className={styles.playerInfoBtn}>
+                {player == PLAYER.ONE && (
+                  <DisplayButton
+                    text={"It’s your turn"}
+                    handleClick={() => {}}
+                  />
+                )}
+              </div>
+            </div>
+
+            <div className={styles.cardContainer}>
+              {gameState.map((card, index) => {
+                return (
+                  <Card
+                    key={index}
+                    flipped={card.flipped}
+                    hide={card.hide}
+                    type={card.type}
+                    rank={card.rank}
+                    toggleCardState={() => updateGameStateData(index)}
+                  />
+                );
+              })}
+            </div>
+
+            <div className={styles.playerInfoContainer}>
+              <PlayerStateBlock
+                altValue={`rocket`}
+                srcString={`/space_rocket.svg`}
+                player={searchParams?.get("playerTwo") || ""}
+                score={scores[PLAYER.TWO]}
+              />
+              <div className={styles.playerInfoBtn}>
+                {player == PLAYER.TWO && (
+                  <DisplayButton
+                    text={"It’s your turn"}
+                    handleClick={() => {}}
+                    active={false}
+                  />
+                )}
+              </div>
             </div>
           </div>
-
-          <div className={styles.cardContainer}>
-            {gameState.map((card, index) => {
-              return (
-                <Card
-                  key={index}
-                  flipped={card.flipped}
-                  hide={card.hide}
-                  type={card.type}
-                  rank={card.rank}
-                  toggleCardState={() => updateGameStateData(index)}
-                />
-              );
-            })}
-          </div>
-
-          <div className={styles.playerInfoContainer}>
-            <PlayerStateBlock
-              altValue={`rocket`}
-              srcString={`/space_rocket.svg`}
-              player={searchParams?.get("playerTwo") || ""}
-              score={scores[PLAYER.TWO]}
-            />
-            <div className={styles.playerInfoBtn}>
-              {player == PLAYER.TWO && (
-                <DisplayButton
-                  text={"It’s your turn"}
-                  handleClick={() => {}}
-                  active={false}
-                />
-              )}
-            </div>
-          </div>
         </div>
-      </div>
+      </Suspense>
     </>
   );
 };
