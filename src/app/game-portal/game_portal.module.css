@@ -1,5 +1,5 @@
 .cardContainer {
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,17 +11,39 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  margin-top: 8px;
 }
 
 .playerInfoContainer {
-  width: 20%;
+  width: 15%;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.playerInfo {
-  height: 50%;
-  background-color: rgba(205, 206, 255, 0.5);
-  margin: 16px;
+.playerInfoBtn {
+  height: 15%;
+  align-self: center;
+}
+
+.header {
+  top: 16px;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.08821529895067215px;
+  text-align: left;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 }

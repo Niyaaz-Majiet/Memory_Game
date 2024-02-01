@@ -43,7 +43,7 @@ const GameComplete = () => {
   return (
     <>
       <RootLayout>
-        <div>Game Complete Page</div>
+        <div className={styles.page}>Game Complete Page</div>
       </RootLayout>
     </>
   );

@@ -4,34 +4,38 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import InputBox from "@/components/inputBox/inputBox";
+import DisplayButton from "@/components/button/displayButton";
 
-export default function Home() {
+const Home = () => {
   const router = useRouter();
   const [players, updatePlayers] = useState({
     p_one: "",
     p_two: "",
   });
 
-  function onPlayerChange(e) {
+  const onPlayerChange = (e) => {
     updatePlayers({
       ...players,
       [e.target.name]: e.target.value,
     });
-  }
+  };
 
-  function startGame() {
-    console.log("Start Game");
-    router.push(
-      `/game-portal?playerOne=${players.p_one}&playerTwo=${players.p_two}`
-    );
-  }
+  const startGame = () => {
+    if (players.p_one.trim() !== "" && players.p_two.trim() !== "") {
+      router.push(
+        `/game-portal?playerOne=${players.p_one}&playerTwo=${players.p_two}`
+      );
+    } else {
+      alert("Please Enter Both Players Names.");
+    }
+  };
 
   return (
     <>
       <div className={styles.page}>
         <h1 className={styles.header}>Memory</h1>
         <div className={styles.container}>
-        <p className={styles.subHeader}>Are you ready to play?</p>
+          <p className={styles.subHeader}>Are you ready to play?</p>
           <div className={styles.row}>
             <div className={styles.inputContainer}>
               <Image
@@ -69,11 +73,11 @@ export default function Home() {
               />
             </div>
           </div>
-          <button className={styles.btnStart} onClick={() => startGame()}>
-            Let's Play
-          </button>
+          <DisplayButton text={"Let's Play"} handleClick={() => startGame()} />
         </div>
       </div>
     </>
   );
-}
+};
+
+export default Home;

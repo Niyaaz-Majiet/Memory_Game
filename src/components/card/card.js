@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 
 const Card = ({ flipped, hide, rank, type, toggleCardState }) => {
   if (hide) {
-    return <div className={styles.hidden}>Hidden</div>;
+    return <div className={styles.hidden}></div>;
   } else {
     return (
       <Image

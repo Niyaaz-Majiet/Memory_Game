@@ -1,13 +1,19 @@
 "use client";
-import Image from "next/image";
+
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Card from "../../components/card/card";
+import PlayerStateBlock from "../../components/playerStateBlock/playerStateBlock";
 
 import data from "../../../public/game_data.json";
 import styles from "./game_portal.module.css";
 import RootLayout from "../layout";
+import DisplayButton from "@/components/button/displayButton";
+  // const shuffledArray = data.cards
+  //   .map((a) => ({ sort: Math.random(), value: a }))
+  //   .sort((a, b) => a.sort - b.sort)
+  //   .map((a) => a.value);
 
 const PLAYER = {
   ONE: "PLAYER_ONE",
@@ -15,11 +21,6 @@ const PLAYER = {
 };
 
 const GamePortal = () => {
-  // const shuffledArray = data.cards
-  //   .map((a) => ({ sort: Math.random(), value: a }))
-  //   .sort((a, b) => a.sort - b.sort)
-  //   .map((a) => a.value);
-
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -43,8 +44,6 @@ const GamePortal = () => {
     const totalScore = scores[PLAYER.ONE] + scores[PLAYER.TWO];
     if (totalScore == 27) {
       onGameComplete();
-    }else if(totalScore > 0){
-      alert("Match")
     }
   }, [scores]);
 
@@ -140,55 +139,58 @@ const GamePortal = () => {
   return (
     <>
       <RootLayout>
-        <div>Game Page</div>
-        <div className={styles.viewContainer}>
-          <div className={styles.playerInfoContainer}>
-            <div className={styles.playerInfo}>
-              <Image
-                alt={`balloon`}
-                src={`/space_balloon.svg`}
-                width={100}
-                height={100}
-                priority={true}
-                style={{ alignSelf: "center", marginBottom: "16px" }}
+        <div className={styles.page}>
+          <h1 className={styles.header}>Memory</h1>
+          <div className={styles.viewContainer}>
+            <div className={styles.playerInfoContainer}>
+              <PlayerStateBlock
+                altValue={`balloon`}
+                srcString={`/space_balloon.svg`}
+                player={searchParams?.get("playerOne") || ""}
+                score={scores[PLAYER.ONE]}
               />
-              <p>{searchParams?.get("playerOne") || ""}</p>
-              <p>{`Score : ${scores[PLAYER.ONE]}`}</p>
+              <div className={styles.playerInfoBtn}>
+                {player == PLAYER.ONE && (
+                  <DisplayButton
+                    text={"It’s your turn"}
+                    handleClick={() => {}}
+                  />
+                )}
+              </div>
             </div>
-            {
-              player == PLAYER.ONE && <h1>Your Turn</h1>
-            }
-          </div>
-          <div className={styles.cardContainer}>
-            {gameState.map((card, index) => {
-              return (
-                <Card
-                  key={index}
-                  flipped={card.flipped}
-                  hide={card.hide}
-                  type={card.type}
-                  rank={card.rank}
-                  toggleCardState={() => updateGameStateData(index)}
-                />
-              );
-            })}
-          </div>
-          <div className={styles.playerInfoContainer}>
-            <div className={styles.playerInfo}>
-              <Image
-                alt={`rocket`}
-                src={`/space_rocket.svg`}
-                width={100}
-                height={100}
-                priority={true}
-                style={{ alignSelf: "center", marginBottom: "16px" }}
+
+            <div className={styles.cardContainer}>
+              {gameState.map((card, index) => {
+                return (
+                  <Card
+                    key={index}
+                    flipped={card.flipped}
+                    hide={card.hide}
+                    type={card.type}
+                    rank={card.rank}
+                    toggleCardState={() => updateGameStateData(index)}
+                  />
+                );
+              })}
+            </div>
+
+            <div className={styles.playerInfoContainer}>
+              <PlayerStateBlock
+                altValue={`rocket`}
+                srcString={`/space_rocket.svg`}
+                player={searchParams?.get("playerTwo") || ""}
+                score={scores[PLAYER.TWO]}
               />
-              <p>{searchParams?.get("playerTwo") || ""}</p>
-              <p>{`Score : ${scores[PLAYER.TWO]}`}</p>
+              <div className={styles.playerInfoBtn}>
+                {player == PLAYER.TWO && (
+                  <DisplayButton
+                    text={"It’s your turn"}
+                    handleClick={() => {}}
+                    active={false}
+                  />
+                )}
+              </div>
             </div>
-            {
-              player == PLAYER.TWO && <h1>Your Turn</h1>
-            }
           </div>
         </div>
       </RootLayout>

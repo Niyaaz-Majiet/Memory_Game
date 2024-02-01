@@ -1,0 +1,31 @@
+.btnStart {
+  margin-top: 32px;
+  background-color: #0ab169;
+  border-radius: 8px;
+  align-self: center;
+  font-family: Poppins;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  border: #0ab169;
+  color: white;
+  padding: 8px;
+}
+
+.btnStartInactive {
+  margin-top: 32px;
+  background-color: white;
+  border-radius: 8px;
+  align-self: center;
+  font-family: Poppins;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  border: white;
+  color: #489dda;
+  padding: 8px;
+}

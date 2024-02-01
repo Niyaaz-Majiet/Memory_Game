@@ -1,0 +1,30 @@
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+  width: 85%;
+  background-color: rgba(205, 206, 255, 0.5);
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 8px;
+}
+
+.name {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.score {
+  font-family: Poppins;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
